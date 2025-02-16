@@ -24,6 +24,23 @@ function createBoard() {
     gameBoard.appendChild(cardElement);
   });
 }
+
+let timeElapsed = 0;
+let timerInterval;
+
+function startTimer() {
+  timeElapsed = 0;
+  clearInterval(timerInterval);
+  timerInterval = setInterval(() => {
+    timeElapsed++;
+    document.getElementById("timer").textContent = `Time: ${timeElapsed}s`;
+  }, 1000);
+}
+
+function stopTimer() {
+  clearInterval(timerInterval);
+}
+
 // flipcard logic
 // 1. listen for the event target and store it
 // 2. card shoud flip if it meets the following conditions:
@@ -71,6 +88,7 @@ function checkMatch (){
         matchedCards.push(card1, card2);
         flippedCards = [];
         if(matchedCards.length === cards.length){
+          stopTimer();
             setTimeout(() =>{
                 alert("🥳🥳 Yay! You've matched all the hearts! Happy Valentine!❤️")
             }, 600);
@@ -99,7 +117,9 @@ function resetGame(){
     flippedCards = [];
     matchedCards = [];
     createBoard();
+    startTimer();
 }
 
 createBoard();
+startTimer();
 

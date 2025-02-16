@@ -66,3 +66,9 @@ body {
   .reset-button:hover {
     background-color: #b71c1c; 
   }
+  #timer {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: #b71c1c;
+  }
+  
