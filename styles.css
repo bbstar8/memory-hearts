@@ -21,6 +21,11 @@ body {
     font-size: 1.2rem;
     margin-bottom: 20px;
   }
+    #moves-counter, #timer {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
   
   .game-board {
     display: grid;
@@ -66,9 +71,5 @@ body {
   .reset-button:hover {
     background-color: #b71c1c; 
   }
-  #timer {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
-    color: #b71c1c;
-  }
-  
+
+   
